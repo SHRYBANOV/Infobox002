@@ -1,0 +1,43 @@
+@Metadata.layer: #CORE
+
+@UI.presentationVariant: [{
+    visualizations: [{
+        type: #AS_CHART,
+        qualifier: 'SalesChart'
+    }]
+}]
+
+@UI.chart: [{
+  qualifier: 'SalesChart',
+  title: 'Продажи по категориям',
+  chartType: #COLUMN,
+  dimensions: ['product_category'],
+  measures: ['sales_amount'],
+  dimensionAttributes: [{
+        dimension: 'product_category',
+        role: #CATEGORY // КРИТИЧНО: именно это заставляет делить на столбики
+    }],
+    measureAttributes: [{
+        measure: 'sales_amount',
+        role: #AXIS_1
+    }]
+}]
+
+annotate view ZC_SalesChart with
+{
+  @UI.facet: [
+    {
+      id:              'ChartFacet',
+      type:            #CHART_REFERENCE,
+      targetQualifier: 'SalesChart', // Ссылка на @UI.chart выше
+      label:           'Аналитика'
+      }
+  ]
+
+  @UI.lineItem: [{ position: 10 }]
+  product_category;
+
+  @UI.lineItem: [{ position: 20 }]
+  sales_amount;
+
+}

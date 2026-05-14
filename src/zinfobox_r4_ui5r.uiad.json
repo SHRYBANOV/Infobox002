@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Інформація",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Інформація"
+  },
+  "ui5AppDetails": {
+    "appId": "zinfobox_m4"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_BA35F3669E4EA3D69F97237FA4B1EE11548EF642_TM",
+    "semanticObject": "zinfobox4",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_BA35F3669E4EA3D69F97237FA4B1EE11548EF642_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Інформація"
+      }
+    }
+  ]
+}

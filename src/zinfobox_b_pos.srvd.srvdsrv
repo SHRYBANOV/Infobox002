@@ -1,0 +1,5 @@
+@EndUserText.label: 'Позіціі'
+@ObjectModel: { leadingEntity: {name: 'ZINFOBOX_POS_DDR' } }
+define service ZINFOBOX_B_POS {
+  expose ZINFOBOX_POS_DDR;
+}

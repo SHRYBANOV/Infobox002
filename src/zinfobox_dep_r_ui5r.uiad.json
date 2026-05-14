@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Департамент",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "INFOBOX"
+  },
+  "ui5AppDetails": {
+    "appId": "zinfobox_dep_m"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_57217ADBE0F6CB27FDD81E31FD0FE543731F0962_TM",
+    "semanticObject": "zinfobox_dep",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_57217ADBE0F6CB27FDD81E31FD0FE543731F0962_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "INFOBOX"
+      }
+    }
+  ]
+}

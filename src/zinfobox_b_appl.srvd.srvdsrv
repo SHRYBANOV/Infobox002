@@ -1,0 +1,5 @@
+@EndUserText.label: 'Мои заявки'
+@ObjectModel: { leadingEntity: {name: 'ZINFOBOX_APL_DD' } }
+define service ZINFOBOX_B_APPL {
+  expose ZINFOBOX_APL_DDR;
+}

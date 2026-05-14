@@ -1,0 +1,122 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+        typeName: 'Інформація про працівника', typeNamePlural: 'Інформація про працівника',
+        //title: { type: #STANDARD, label: 'Табельний №', value: 'Tabnum_txt' },
+        description.value: 'Tabnum_txt',
+        imageUrl: 'Attachment'  }
+     }
+
+
+
+annotate entity ZINFOBOX_DDR with
+{
+
+
+  @UI.facet:
+  [
+    { id: 'GeneralInfo',  purpose : #STANDARD, label: 'Основні данні', type: #COLLECTION, position: 10 },
+  //   { id: 'IDheader', position: 10, purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, parentId: 'GeneralInfo' },
+
+    { purpose : #HEADER, position: 10, type : #DATAPOINT_REFERENCE, targetQualifier : '_FN' },
+    { purpose : #HEADER, position: 20, type : #DATAPOINT_REFERENCE, targetQualifier : '_LN' },
+    { purpose : #HEADER, position: 30, type : #DATAPOINT_REFERENCE, targetQualifier : '_SN' },
+    { purpose : #STANDARD, position: 10, parentId: 'GeneralInfo', type : #FIELDGROUP_REFERENCE, targetQualifier : '_data',label: 'Данні робітника' },
+    { purpose : #STANDARD, position: 20, parentId: 'GeneralInfo', type : #FIELDGROUP_REFERENCE, targetQualifier : '_data2',label: 'Доданні данні' },
+    { purpose : #STANDARD, position: 30, parentId: 'GeneralInfo', type: #FIELDGROUP_REFERENCE, targetQualifier: 'Upload', label: 'Загрузка данных' }
+
+  ]
+
+  //@Consumption.semanticObject: 'zinfobox_dep'
+//  @UI: {lineItem: [{ position: 10, label: 'Табельний №', importance: #HIGH },
+//              { position: 220, type: #FOR_INTENT_BASED_NAVIGATION, dataAction: 'DEPData',
+//                semanticObject: 'zinfobox_dep',
+//                semanticObjectAction: 'manage',
+//                label: 'Департамент', importance: #HIGH, invocationGrouping: #CHANGE_SET}
+//  ] 
+//}
+  Tabnum;
+  @UI: {lineItem:      [ { position: 30, label: 'Ім''я', importance: #HIGH }//,
+  //             { position: 220, type: #FOR_ACTION, dataAction: 'DEPData', label: 'Департамент', importance: #HIGH, invocationGrouping: #CHANGE_SET },
+             //{ position: 230, type: #FOR_ACTION, dataAction: 'ORGData', label: 'Організація', importance: #HIGH, invocationGrouping: #CHANGE_SET },
+  //             { position: 240, type: #FOR_ACTION, dataAction: 'POSData', label: 'Посада', importance: #HIGH, invocationGrouping: #CHANGE_SET },
+  //             { position: 250, type: #FOR_ACTION, dataAction: 'UNITData', label: 'Підрозділ', importance: #HIGH, invocationGrouping: #CHANGE_SET }
+                       ],
+  //      identification: [ { position: 30, label: 'Ім''я'  } ],
+      fieldGroup:     [ { position:20, label: 'Ім''я', qualifier: '_data' }]
+//        fieldGroup: [ { qualifier: 'FullFIO', position: 10 } ]
+  }
+  Firstname;
+  @UI: {lineItem:      [ { position: 40, label: 'Прізвище', importance: #HIGH } ],
+  //       identification: [ { position: 40, label: 'Прізвище'  } ],
+       fieldGroup:     [ { position:30, label: 'Прізвище', qualifier: '_data'  }]
+  //      fieldGroup: [ { qualifier: 'FullFIO', position: 20 } ]
+  }
+  Lastname;
+  @UI: {lineItem:      [ { position: 50, label: 'По батькові', importance: #HIGH } ], 
+  //      identification: [ { position: 50, label: 'По батькові'  } ],
+       fieldGroup:     [ { position:40, label: 'По батькові', qualifier: '_data'  }]
+  //      fieldGroup: [ { qualifier: 'FullFIO', position: 30 } ]
+  }
+  Secondname;
+  @UI: {lineItem:      [ { position: 20, label: 'Телефон', importance: #HIGH }  ],
+  //      identification: [ { position: 20, label: 'Телефон'  } ],
+       fieldGroup:     [ { position:10, label: 'Телефон', qualifier: '_data2'  }]}
+   Telnum;
+  @UI: {lineItem:      [ { position: 60, label: 'Дата народження' }  ],
+  //      identification: [ { position: 60, label: 'Дата народження'  } ],
+       fieldGroup:     [ { position:20, label: 'Дата народження', qualifier: '_data2'  }]}
+  Datebirth;
+  @UI: {lineItem:      [ { position: 70, label: 'Організація', importance: #HIGH }  ],
+  //       identification: [ { position: 70, label: 'Організація'  } ],
+       fieldGroup:     [ { position:30, label: 'Організація', qualifier: '_data2'  }]}
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZINFOBOX_ORG_DD' , element: 'id_org' }, distinctValues: true }]
+  @UI.textArrangement: #TEXT_ONLY
+  Organization;
+  @UI: {lineItem:      [ { position: 80, label: 'Департамент', importance: #HIGH }  ],
+  //      identification: [ { position: 80, label: 'Департамент'  } ],
+       fieldGroup:     [ { position:40, label: 'Департамент', qualifier: '_data2'  }]}
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZINFOBOX_DEP_DD' , element: 'id_dep' }, distinctValues: true }]
+  @UI.textArrangement: #TEXT_ONLY
+  Department;
+  @UI: {lineItem:      [ { position: 90, label: 'Підрозділ', importance: #HIGH }  ],
+  //      identification: [ { position: 90, label: 'Підрозділ'  } ],
+       fieldGroup:     [ { position:50, label: 'Підрозділ', qualifier: '_data2'  }]}
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZINFOBOX_UNIT_DD' , element: 'id_unit' }, distinctValues: true }]
+  @UI.textArrangement: #TEXT_ONLY
+  Unit;
+  @UI: {lineItem:      [ { position: 100, label: 'Посада', importance: #HIGH }  ],
+  //      identification: [ { position: 100, label: 'Посада'  } ],
+       fieldGroup:     [ { position:60, label: 'Посада', qualifier: '_data2'  }]}
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZINFOBOX_POS_DD' , element: 'id_pos' }, distinctValues: true }]
+  @UI.textArrangement: #TEXT_ONLY
+  Positions;
+  @UI: {lineItem:      [ { position: 110, label: 'Дата приняття', importance: #HIGH }  ],
+  //      identification: [ { position: 110, label: 'Дата приняття'  } ],
+       fieldGroup:     [ { position:70, label: 'Дата приняття', qualifier: '_data2'  }]}
+  Dateofadoption;
+  @UI: {lineItem:      [ { position: 120, label: 'Статус', importance: #HIGH }  ],
+  //     identification: [ { position: 120, label: 'Статус'  } ],
+       fieldGroup:     [ { position:80, label: 'Статус', qualifier: '_data2'  }],
+       statusInfo: [ { label: 'Status' , iconUrl: 'sap-icon://accept' } ] }
+  @Consumption.valueHelpDefinition: [{ entity:
+       { name: 'ZINFOBOX_STATUS_DD' , element: 'Value' },
+          distinctValues: true
+       }]
+  @UI.textArrangement: #TEXT_ONLY
+  Status;
+  @UI.lineItem: [ { position: 5, label: 'Фото', cssDefault.width: '5rem' } ]
+  Photo;
+  @UI: { fieldGroup:     [ { position: 130, qualifier: 'Upload' , label: 'Фото'} ]}
+  Attachment;
+  @UI.hidden: true
+  MimeType;
+  @UI.hidden: true
+  Filename;
+  @UI.hidden: true
+  Createdat;
+  @UI.hidden: true
+  Updatedat;
+  //
+  //  @UI.lineItem: [{ position: 140 }]
+  //  ItemsCount;
+}

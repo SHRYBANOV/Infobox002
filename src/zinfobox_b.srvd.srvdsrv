@@ -1,0 +1,11 @@
+@EndUserText.label: 'Инфобокс'
+@ObjectModel: { leadingEntity: {name: 'ZINFOBOX_DDR' } }
+define service ZINFOBOX_B
+  provider contracts odata_v4_ui {
+  expose ZINFOBOX_DDR       as INFOBOX_D;
+  expose ZINFOBOX_STATUS_DD;
+  expose ZINFOBOX_TYPE_DD;
+  expose zinfobox_org_dd;
+  expose ZINFOBOX_DEP_DD;
+  expose ZINFOBOX_POS_DD;
+}
