@@ -1,0 +1,5 @@
+CLASS zbp_infobox_unit_ddr DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zinfobox_unit_ddr.
+ENDCLASS.
+
+CLASS zbp_infobox_unit_ddr IMPLEMENTATION.
+ENDCLASS.

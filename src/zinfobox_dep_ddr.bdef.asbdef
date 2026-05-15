@@ -1,0 +1,26 @@
+managed implementation in class zbp_infobox_dep_ddr unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZINFOBOX_DEP_DDR //alias <alias_name>
+persistent table zdepartment2
+draft table zdepartment2_dr
+lock master total etag updatedat
+authorization master ( global, instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  field ( numbering : managed, readonly ) id_dep;
+  field ( readonly ) createdat, updatedat;
+
+  mapping for zdepartment2 corresponding;
+}

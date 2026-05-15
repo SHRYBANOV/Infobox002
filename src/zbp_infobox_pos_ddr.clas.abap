@@ -1,0 +1,5 @@
+CLASS zbp_infobox_pos_ddr DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zinfobox_pos_ddr.
+ENDCLASS.
+
+CLASS zbp_infobox_pos_ddr IMPLEMENTATION.
+ENDCLASS.
