@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_init_range IMPLEMENTATION.
+CLASS ZCL_INIT_RANGE IMPLEMENTATION.
+
+
 METHOD if_oo_adt_classrun~main.
 
   DATA : lv_norange  TYPE REF TO cl_numberrange_objects,

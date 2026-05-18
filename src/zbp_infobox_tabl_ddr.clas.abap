@@ -1,0 +1,5 @@
+CLASS zbp_infobox_tabl_ddr DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zinfobox_tabl_ddr.
+ENDCLASS.
+
+CLASS zbp_infobox_tabl_ddr IMPLEMENTATION.
+ENDCLASS.

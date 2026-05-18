@@ -1,0 +1,5 @@
+@EndUserText.label: 'Таблеграмма'
+@ObjectModel: { leadingEntity: {name: 'ZINFOBOX_TABL_DDR' } }
+define service ZINFOBOX_B_TABL {
+  expose ZINFOBOX_TABL_DDR;
+}

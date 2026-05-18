@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_fill_chart IMPLEMENTATION.
+CLASS ZCL_FILL_CHART IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
     DATA: lt_sales_table2 TYPE TABLE OF zsales_table2.
 *        DELETE FROM zsales_table2.

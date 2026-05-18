@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_fill_data IMPLEMENTATION.
+CLASS ZCL_FILL_DATA IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
     DATA: lt_personal TYPE TABLE OF zpersonal.
 *        DELETE FROM zpersonal.

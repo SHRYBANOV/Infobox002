@@ -1,0 +1,32 @@
+managed implementation in class zbp_infobox_tabl_ddr unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZINFOBOX_TABL_DDR //alias <alias_name>
+persistent table ztablegramma
+draft table ztablegramma_dr
+lock master total etag Updatedat
+authorization master ( global, instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  field ( readonly ) Createdat, Updatedat, Datarobot;
+  field ( numbering : managed, readonly ) IdTab;
+  determination set_default_currency on modify { create; }
+
+  mapping for ztablegramma corresponding
+  {
+    PremSz = prem_sz;
+    IdTab = id_tab;
+    VidRobot = vid_robot;
+  }
+}

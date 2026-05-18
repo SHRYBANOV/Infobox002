@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_fill_sprav IMPLEMENTATION.
+CLASS ZCL_FILL_SPRAV IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
     DATA: lt_org  TYPE TABLE OF zorganizations,
           lt_dep  TYPE TABLE OF zdepartment2,
